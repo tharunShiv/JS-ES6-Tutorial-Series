@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cookies</title>
+    <script>
+      function clicked() {
+        console.log("Function clicked");
+        /*
+        Expires
+        Domain
+        Path
+        Secure
+        Name = Value
+         */
+        var cookieValue = escape(document.myForm.name.value);
+        console.log(cookieValue);
+        // document.cookie = "name = " + cookieValue;
+
+        // var allcookies = unescape(document.cookie);
+        // console.log(allcookies);
+
+        var now = new Date();
+        now.setMonth(now.getMonth() + 1);
+        document.cookie = "name = " + cookieValue;
+        document.cookie = "expires = " + now.toUTCString() + ";";
+
+        var allcookies = unescape(document.cookie);
+        console.log(allcookies);
+
+        var now = new Date();
+        now.setMonth(now.getMonth() - 1);
+        document.cookie = "name = " + cookieValue;
+        document.cookie = "expires = " + now.toUTCString() + ";";
+
+        var allcookies = unescape(document.cookie);
+        console.log(allcookies);
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myForm">
+      Enter cookie info : <input type="text" name="name" />
+      <input type="button" value="submit" onclick="clicked()" />
+    </form>
+  </body>
+</html>
