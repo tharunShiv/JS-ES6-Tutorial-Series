@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="dis">Hello This would disappear</p>
+    <input type="button" value="Click Me To Redirect" onclick="redirection()">
+    <input type="button" value="Click Me To ReLoad" onclick="reload()">
+    <input type="button" value="Vanish" onclick="vanish()">
+
+    <script>
+        function redirection() {
+            window.location = "https://google.com";
+        }
+        function reload() {
+            window.location.reload();
+        }
+        function vanish() {
+            document.getElementById('dis').innerHTML = "";
+        }
+        </script>
+</body>
+</html>
