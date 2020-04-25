@@ -4,42 +4,32 @@
     <title>Cookies</title>
     <script>
       function clicked() {
-        console.log("Function clicked");
-        /*
-        Expires
-        Domain
-        Path
-        Secure
-        Name = Value
-         */
-        var cookieValue = escape(document.myForm.name.value);
-        console.log(cookieValue);
-        // document.cookie = "name = " + cookieValue;
+        console.log("Button Clicked");
 
-        // var allcookies = unescape(document.cookie);
-        // console.log(allcookies);
+        // let key = document.myForm.name1.value;
+        // let value = document.myForm.name2.value;
+        // localStorage.setItem(key, value);
 
-        var now = new Date();
-        now.setMonth(now.getMonth() + 1);
-        document.cookie = "name = " + cookieValue;
-        document.cookie = "expires = " + now.toUTCString() + ";";
+        // localStorage.removeItem("color");
 
-        var allcookies = unescape(document.cookie);
-        console.log(allcookies);
+        // console.log(localStorage.getItem("user"));
 
-        var now = new Date();
-        now.setMonth(now.getMonth() - 1);
-        document.cookie = "name = " + cookieValue;
-        document.cookie = "expires = " + now.toUTCString() + ";";
+        // localStorage.clear();
 
-        var allcookies = unescape(document.cookie);
-        console.log(allcookies);
+        // document.cookie = "username=Tharun;";
+
+        let expiration = new Date();
+        expiration.setMonth(expiration.getMonth() - 1);
+        document.cookie =
+          "username=Tharun; expires=" + expiration.toUTCString() + "";
       }
     </script>
   </head>
   <body>
     <form name="myForm">
-      Enter cookie info : <input type="text" name="name" />
+      Enter key info : <input type="text" name="name1" /><br />
+      Enter value info :
+      <input type="text" name="name2" />
       <input type="button" value="submit" onclick="clicked()" />
     </form>
   </body>

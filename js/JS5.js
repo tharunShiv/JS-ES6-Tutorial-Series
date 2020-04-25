@@ -1,28 +1,60 @@
-// Declaration inside a scope
+// function or block scoped
+
+// var - function scoped
+
 // for (var i = 0; i < 5; i++) {
-//   let num = 100;
-//   console.log("Num var: " + num);
-//   {
-//     let num = 10;
-//     console.log("Num let: " + num);
-//   }
+//   console.log(i);
 // }
 
-// Redeclaration
-// var num = 100;
-// let num = 10;
+// console.log(i);
 
-// const
-// const x = 10;
-// x = 100;
+// let - block scoped
 
-// Let is block Scoped
 // for (let i = 0; i < 5; i++) {
 //   console.log(i);
 // }
+
 // console.log(i);
-// Var is Global Scoped
-for (var i = 0; i < 5; i++) {
-  console.log(i);
-}
-console.log(i);
+
+// const - block scoped
+
+// for (const i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// console.log(i);
+
+// ----------------------------
+
+// redeclaring
+
+// var can be redeclared
+// var cat = "meow";
+
+// var cat = "psssss";
+
+// let cannot be redeclared
+// let dog = "boww";
+
+// let dog = "voww";
+
+// const cannot be redeclared
+// const lion = "roarr";
+
+// const lion = "roooor";
+
+// ------------------------
+
+// redefining
+
+// var can be redefined
+var dog = "boww";
+dog = "voww";
+
+// let can be redefined
+let cat = "meow";
+cat = "prrr";
+
+// const cannot be redefined
+const lion = "roar";
+lion = "rooor";
